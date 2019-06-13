@@ -1,0 +1,23 @@
+Add a network or a container
+( NIOS will auto create the container if it needs to )
+
+  POST /wapi/v1.2/network
+  Content-Type: application/json
+
+  {
+     "network": "45.0.45.0/24"
+  }
+
+Add a network and assign to a member
+
+  POST /wapi/v1.2/network
+  Content-Type: application/json
+  {
+     "network": "45.0.46.0/24",
+     "members": [
+        {
+           "_struct": "dhcpmember",
+           "ipv4addr" : "192.168.1.3"
+        }
+     ]
+  }
